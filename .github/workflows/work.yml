@@ -1,7 +1,10 @@
 name: Test1
 on: 
-    push
-
+    push:
+        branches:
+            - master
+        tags:
+            - ad*
 
 jobs:
     run_test:
