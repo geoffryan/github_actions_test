@@ -8,3 +8,18 @@ jobs:
         steps:
             - run: echo ${{ github.event_name }}
             - run: echo ${{ github.event.ref }}
+
+    run_test2:
+        name: Running second thing
+        runs-on: ubuntu-latest
+        if: startsWith(github.event.ref, 'refs/tags/a')
+        steps:
+            - run: echo "yes tag match!"
+
+    run_test3:
+        name: Running second thing
+        runs-on: ubuntu-latest
+        if: startsWith(github.event.ref, 'refs/heads/m')
+        steps:
+            - run: echo "yes branch match!"
+
